@@ -1,0 +1,362 @@
+[
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "MP",
+    "count": 990,
+    "cost_p50_usd": 621127,
+    "cost_p90_usd": 1193926,
+    "cost_mean_usd": 774923,
+    "cost_std_usd": 918094
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "EI",
+    "count": 715,
+    "cost_p50_usd": 755444,
+    "cost_p90_usd": 1515003,
+    "cost_mean_usd": 848886,
+    "cost_std_usd": 892482
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "ST",
+    "count": 693,
+    "cost_p50_usd": 522221,
+    "cost_p90_usd": 1142426,
+    "cost_mean_usd": 617085,
+    "cost_std_usd": 662823
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "WD",
+    "count": 575,
+    "cost_p50_usd": 509283,
+    "cost_p90_usd": 2176069,
+    "cost_mean_usd": 1311338,
+    "cost_std_usd": 5970519
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "GI",
+    "count": 277,
+    "cost_p50_usd": 478148,
+    "cost_p90_usd": 1498995,
+    "cost_mean_usd": 701539,
+    "cost_std_usd": 907959
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "BS",
+    "count": 55,
+    "cost_p50_usd": 263592,
+    "cost_p90_usd": 692853,
+    "cost_mean_usd": 300674,
+    "cost_std_usd": 342906
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "BA",
+    "count": 38,
+    "cost_p50_usd": 815664,
+    "cost_p90_usd": 2611273,
+    "cost_mean_usd": 1045512,
+    "cost_std_usd": 1095967
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "MI",
+    "count": 31,
+    "cost_p50_usd": 108837,
+    "cost_p90_usd": 923055,
+    "cost_mean_usd": 433382,
+    "cost_std_usd": 468642
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "DD",
+    "count": 3,
+    "cost_p50_usd": 233937,
+    "cost_p90_usd": 305244,
+    "cost_mean_usd": 257706,
+    "cost_std_usd": 33614
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "SX",
+    "count": 1,
+    "cost_p50_usd": 1284796,
+    "cost_p90_usd": 1284796,
+    "cost_mean_usd": 1284796,
+    "cost_std_usd": 0
+  },
+  {
+    "water_depth_bucket": "0-200ft",
+    "basin": "ALL",
+    "count": 3378,
+    "cost_p50_usd": 561305,
+    "cost_p90_usd": 1231792,
+    "cost_mean_usd": 835368,
+    "cost_std_usd": 2591625
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "SS",
+    "count": 829,
+    "cost_p50_usd": 533942,
+    "cost_p90_usd": 1398919,
+    "cost_mean_usd": 650868,
+    "cost_std_usd": 699181
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "SM",
+    "count": 743,
+    "cost_p50_usd": 492276,
+    "cost_p90_usd": 882524,
+    "cost_mean_usd": 620155,
+    "cost_std_usd": 725503
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "SP",
+    "count": 447,
+    "cost_p50_usd": 753386,
+    "cost_p90_usd": 1340796,
+    "cost_mean_usd": 1287069,
+    "cost_std_usd": 6219188
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "HI",
+    "count": 316,
+    "cost_p50_usd": 561226,
+    "cost_p90_usd": 2569825,
+    "cost_mean_usd": 1068071,
+    "cost_std_usd": 1261981
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "WC",
+    "count": 202,
+    "cost_p50_usd": 237690,
+    "cost_p90_usd": 932629,
+    "cost_mean_usd": 476569,
+    "cost_std_usd": 659954
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "EC",
+    "count": 141,
+    "cost_p50_usd": 697083,
+    "cost_p90_usd": 1702111,
+    "cost_mean_usd": 1203981,
+    "cost_std_usd": 3844071
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "BM",
+    "count": 41,
+    "cost_p50_usd": 377847,
+    "cost_p90_usd": 984439,
+    "cost_mean_usd": 467262,
+    "cost_std_usd": 583182
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "MO",
+    "count": 34,
+    "cost_p50_usd": 874321,
+    "cost_p90_usd": 1129507,
+    "cost_mean_usd": 824002,
+    "cost_std_usd": 388672
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "GA",
+    "count": 29,
+    "cost_p50_usd": 484366,
+    "cost_p90_usd": 1456402,
+    "cost_mean_usd": 679588,
+    "cost_std_usd": 825442
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "MU",
+    "count": 15,
+    "cost_p50_usd": 325260,
+    "cost_p90_usd": 1062321,
+    "cost_mean_usd": 818829,
+    "cost_std_usd": 1170700
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "PL",
+    "count": 9,
+    "cost_p50_usd": 764720,
+    "cost_p90_usd": 2813742,
+    "cost_mean_usd": 853959,
+    "cost_std_usd": 772007
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "PN",
+    "count": 5,
+    "cost_p50_usd": 2103535,
+    "cost_p90_usd": 3386206,
+    "cost_mean_usd": 2234928,
+    "cost_std_usd": 1170135
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "CA",
+    "count": 4,
+    "cost_p50_usd": 557960,
+    "cost_p90_usd": 1229991,
+    "cost_mean_usd": 604766,
+    "cost_std_usd": 390851
+  },
+  {
+    "water_depth_bucket": "200-500ft",
+    "basin": "ALL",
+    "count": 2815,
+    "cost_p50_usd": 537246,
+    "cost_p90_usd": 1307454,
+    "cost_mean_usd": 809821,
+    "cost_std_usd": 2735406
+  },
+  {
+    "water_depth_bucket": "500-1000ft",
+    "basin": "VR",
+    "count": 286,
+    "cost_p50_usd": 696045,
+    "cost_p90_usd": 1823761,
+    "cost_mean_usd": 803198,
+    "cost_std_usd": 856030
+  },
+  {
+    "water_depth_bucket": "500-1000ft",
+    "basin": "VK",
+    "count": 62,
+    "cost_p50_usd": 1271183,
+    "cost_p90_usd": 15814080,
+    "cost_mean_usd": 6186426,
+    "cost_std_usd": 6439476
+  },
+  {
+    "water_depth_bucket": "500-1000ft",
+    "basin": "EW",
+    "count": 34,
+    "cost_p50_usd": 5294847,
+    "cost_p90_usd": 22657600,
+    "cost_mean_usd": 9402629,
+    "cost_std_usd": 9598074
+  },
+  {
+    "water_depth_bucket": "500-1000ft",
+    "basin": "ALL",
+    "count": 382,
+    "cost_p50_usd": 766067,
+    "cost_p90_usd": 7571800,
+    "cost_mean_usd": 2442310,
+    "cost_std_usd": 4906830
+  },
+  {
+    "water_depth_bucket": "1000-3000ft",
+    "basin": "MC",
+    "count": 342,
+    "cost_p50_usd": 22831000,
+    "cost_p90_usd": 32795720,
+    "cost_mean_usd": 22238219,
+    "cost_std_usd": 7901781
+  },
+  {
+    "water_depth_bucket": "1000-3000ft",
+    "basin": "GC",
+    "count": 263,
+    "cost_p50_usd": 27246920,
+    "cost_p90_usd": 34142460,
+    "cost_mean_usd": 25433219,
+    "cost_std_usd": 7825372
+  },
+  {
+    "water_depth_bucket": "1000-3000ft",
+    "basin": "ALL",
+    "count": 605,
+    "cost_p50_usd": 24008964,
+    "cost_p90_usd": 33489320,
+    "cost_mean_usd": 23627120,
+    "cost_std_usd": 8026472
+  },
+  {
+    "water_depth_bucket": "3000ft+",
+    "basin": "WR",
+    "count": 70,
+    "cost_p50_usd": 33191072,
+    "cost_p90_usd": 36177020,
+    "cost_mean_usd": 30706654,
+    "cost_std_usd": 7614310
+  },
+  {
+    "water_depth_bucket": "3000ft+",
+    "basin": "AC",
+    "count": 62,
+    "cost_p50_usd": 20576800,
+    "cost_p90_usd": 25218140,
+    "cost_mean_usd": 20395656,
+    "cost_std_usd": 3906514
+  },
+  {
+    "water_depth_bucket": "3000ft+",
+    "basin": "GB",
+    "count": 33,
+    "cost_p50_usd": 23743084,
+    "cost_p90_usd": 31916004,
+    "cost_mean_usd": 22845309,
+    "cost_std_usd": 8059512
+  },
+  {
+    "water_depth_bucket": "3000ft+",
+    "basin": "KC",
+    "count": 30,
+    "cost_p50_usd": 23799728,
+    "cost_p90_usd": 37512200,
+    "cost_mean_usd": 27578026,
+    "cost_std_usd": 6659784
+  },
+  {
+    "water_depth_bucket": "3000ft+",
+    "basin": "AT",
+    "count": 9,
+    "cost_p50_usd": 21580208,
+    "cost_p90_usd": 32216564,
+    "cost_mean_usd": 23743726,
+    "cost_std_usd": 3945694
+  },
+  {
+    "water_depth_bucket": "3000ft+",
+    "basin": "DC",
+    "count": 9,
+    "cost_p50_usd": 16943492,
+    "cost_p90_usd": 32691680,
+    "cost_mean_usd": 21470773,
+    "cost_std_usd": 6463699
+  },
+  {
+    "water_depth_bucket": "3000ft+",
+    "basin": "EB",
+    "count": 8,
+    "cost_p50_usd": 13584156,
+    "cost_p90_usd": 16486872,
+    "cost_mean_usd": 13524333,
+    "cost_std_usd": 2017568
+  },
+  {
+    "water_depth_bucket": "3000ft+",
+    "basin": "ALL",
+    "count": 221,
+    "cost_p50_usd": 24166180,
+    "cost_p90_usd": 35666068,
+    "cost_mean_usd": 24933745,
+    "cost_std_usd": 8002516
+  }
+]

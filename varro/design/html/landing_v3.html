@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Varro, ARO Intelligence Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #09090b;
+      --surface-1:   #18181b;
+      --surface-2:   #27272a;
+      --border:      #27272a;
+      --border-strong: #3f3f46;
+      --fg:          #fafafa;
+      --muted:       #a1a1aa;
+      --dim:         #71717a;
+      --accent:      #fafafa;
+      --accent-dim:  rgba(250,250,250,0.06);
+      --red:         #ef4444;
+      --red-dim:     rgba(239,68,68,0.10);
+      --red-border:  rgba(239,68,68,0.20);
+      --green:       #22c55e;
+      --green-dim:   rgba(34,197,94,0.10);
+      --data:        #60a5fa;
+      --data-dim:    rgba(96,165,250,0.10);
+      --font:        'Geist', 'Inter', system-ui, sans-serif;
+      --mono:        'Geist Mono', 'JetBrains Mono', monospace;
+      --radius:      8px;
+      --radius-lg:   12px;
+      --radius-full: 9999px;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      font-family: var(--font);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── NAV ─────────────────────────────────────────────── */
+    nav {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(9,9,11,0.80);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 48px;
+      height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 9px;
+      text-decoration: none;
+    }
+    .nav-mark {
+      width: 24px; height: 24px; display: flex; align-items: center;
+    }
+    .nav-wordmark {
+      font-size: 14px; font-weight: 600; letter-spacing: 0.12em;
+      color: var(--fg); text-transform: uppercase;
+    }
+    .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
+    .nav-links a {
+      font-size: 13px; color: var(--muted); text-decoration: none;
+      transition: color 150ms;
+    }
+    .nav-links a:hover { color: var(--fg); }
+    .nav-cta {
+      background: var(--fg); color: var(--bg);
+      font-size: 13px; font-weight: 600;
+      padding: 7px 16px; border-radius: var(--radius);
+      text-decoration: none;
+      transition: opacity 150ms;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+    .nav-cta:focus-visible {
+      outline: 2px solid var(--fg); outline-offset: 3px;
+    }
+
+    /* ── HERO ────────────────────────────────────────────── */
+    .hero {
+      padding: 88px 48px 72px;
+      max-width: 1120px; margin: 0 auto;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(250,250,250,0.12);
+      color: var(--muted); font-size: 11px; font-weight: 500;
+      padding: 3px 12px; border-radius: var(--radius-full);
+      margin-bottom: 28px; letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .badge-dot {
+      width: 5px; height: 5px; border-radius: 50%;
+      background: var(--green); display: inline-block;
+    }
+    .hero h1 {
+      font-size: clamp(36px, 5.5vw, 64px);
+      font-weight: 700; line-height: 1.1;
+      letter-spacing: -0.03em; color: var(--fg);
+      margin-bottom: 20px;
+      max-width: 820px; margin-left: auto; margin-right: auto;
+    }
+    .hero-sub {
+      font-size: 17px; color: var(--muted); line-height: 1.7;
+      max-width: 540px; margin: 0 auto 36px;
+    }
+    .hero-ctas {
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-bottom: 56px;
+    }
+    .btn-primary {
+      background: var(--fg); color: var(--bg);
+      font-size: 14px; font-weight: 600; font-family: var(--font);
+      padding: 10px 24px; border-radius: var(--radius);
+      text-decoration: none; border: none; cursor: pointer;
+      transition: opacity 150ms, transform 150ms;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--muted);
+      font-size: 14px; font-weight: 500; font-family: var(--font);
+      padding: 10px 24px; border-radius: var(--radius);
+      border: 1px solid var(--border); text-decoration: none;
+      transition: color 150ms, border-color 150ms;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn-outline:hover { color: var(--fg); border-color: var(--border-strong); }
+
+    /* ── SIGNAL CARD ─────────────────────────────────────── */
+    .signal-card {
+      max-width: 520px; margin: 0 auto;
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-left: 2px solid var(--red);
+      border-radius: var(--radius-lg);
+      padding: 20px 24px;
+      text-align: left;
+    }
+    .sc-header {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 16px;
+    }
+    .sc-company { font-size: 13px; font-weight: 600; color: var(--fg); }
+    .sc-ticker {
+      font-family: var(--mono); font-size: 10px; color: var(--dim);
+      background: var(--surface-2); border: 1px solid var(--border);
+      padding: 1px 6px; border-radius: 4px; margin-left: 6px;
+    }
+    .badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 2px 8px; border-radius: var(--radius-full);
+      font-size: 10px; font-weight: 500; letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+    .badge-red { background: var(--red-dim); color: #f87171; border: 1px solid var(--red-border); }
+    .badge-green { background: var(--green-dim); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+    .badge-muted { background: var(--accent-dim); color: var(--muted); border: 1px solid var(--border); }
+
+    .sc-bars { margin-bottom: 14px; }
+    .sc-bar-row { margin-bottom: 10px; }
+    .sc-bar-meta {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 5px;
+    }
+    .sc-bar-label {
+      font-family: var(--mono); font-size: 10px; color: var(--dim);
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .sc-bar-val { font-family: var(--mono); font-size: 11px; color: var(--muted); font-weight: 500; }
+    .sc-bar-val.data { color: var(--data); }
+    .sc-bar-track {
+      height: 6px; background: var(--surface-2); border-radius: 3px; overflow: hidden;
+    }
+    .sc-bar-fill { height: 100%; border-radius: 3px; }
+    .sc-bar-fill.edgar { background: var(--red); width: 9%; }
+    .sc-bar-fill.varro { background: var(--data); width: 100%; }
+
+    .sc-footer {
+      display: flex; flex-wrap: wrap; gap: 16px;
+      border-top: 1px solid var(--border); padding-top: 12px;
+    }
+    .sc-chip { font-family: var(--mono); font-size: 10px; color: var(--dim); text-transform: uppercase; letter-spacing: 0.06em; }
+    .sc-chip span { color: var(--muted); }
+
+    /* ── STATS BAR ───────────────────────────────────────── */
+    .stats-bar {
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      background: var(--surface-1);
+    }
+    .stats-inner {
+      max-width: 1120px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat {
+      padding: 28px 32px; text-align: center;
+      border-right: 1px solid var(--border);
+    }
+    .stat:last-child { border-right: none; }
+    .stat-num {
+      font-size: 28px; font-weight: 700; color: var(--fg);
+      letter-spacing: -0.03em; display: block; margin-bottom: 4px;
+      font-variant-numeric: tabular-nums;
+    }
+    .stat-label {
+      font-size: 11px; color: var(--dim);
+      text-transform: uppercase; letter-spacing: 0.07em;
+    }
+
+    /* ── METHODOLOGY BAR ─────────────────────────────────── */
+    .method-bar {
+      border-bottom: 1px solid var(--border);
+      padding: 12px 48px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 8px; flex-wrap: wrap;
+    }
+    .method-label {
+      font-family: var(--mono); font-size: 10px; color: var(--dim);
+      text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .method-sep { color: var(--border-strong); font-size: 12px; }
+
+    /* ── SECTIONS ────────────────────────────────────────── */
+    .section { padding: 80px 48px; max-width: 1120px; margin: 0 auto; }
+    .section-eyebrow {
+      font-family: var(--mono); font-size: 11px; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 12px; display: block;
+    }
+    .section-heading {
+      font-size: clamp(24px, 3.5vw, 36px); font-weight: 700;
+      letter-spacing: -0.025em; color: var(--fg);
+      line-height: 1.2; margin-bottom: 14px; max-width: 520px;
+    }
+    .section-sub {
+      font-size: 15px; color: var(--muted); line-height: 1.75;
+      max-width: 480px;
+    }
+
+    /* ── FEATURES GRID ───────────────────────────────────── */
+    .features-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1px; background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      margin-top: 48px;
+    }
+    .feature {
+      background: var(--bg); padding: 32px 28px;
+      transition: background 150ms;
+    }
+    .feature:hover { background: var(--surface-1); }
+    .feature-icon {
+      width: 36px; height: 36px;
+      background: var(--accent-dim);
+      border: 1px solid rgba(250,250,250,0.08);
+      border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px; font-size: 16px; color: var(--muted);
+    }
+    .feature-title {
+      font-size: 15px; font-weight: 600; color: var(--fg);
+      margin-bottom: 8px; line-height: 1.3;
+    }
+    .feature-body {
+      font-size: 13px; color: var(--muted); line-height: 1.75; margin-bottom: 14px;
+    }
+    .feature-meta {
+      font-family: var(--mono); font-size: 10px; color: var(--dim);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      border-top: 1px solid var(--border); padding-top: 14px;
+    }
+
+    /* ── PRODUCT PREVIEW ─────────────────────────────────── */
+    .preview-section {
+      padding: 0 48px 80px; max-width: 1120px; margin: 0 auto;
+    }
+    .preview-frame {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      background: var(--surface-1);
+    }
+    .preview-topbar {
+      background: var(--surface-2);
+      border-bottom: 1px solid var(--border);
+      padding: 10px 16px;
+      display: flex; align-items: center; gap: 6px;
+    }
+    .dot { width: 10px; height: 10px; border-radius: 50%; background: var(--border-strong); }
+    .preview-topbar-title {
+      font-size: 11px; color: var(--dim); margin-left: 8px;
+      font-family: var(--mono); text-transform: uppercase; letter-spacing: 0.06em;
+    }
+    .preview-body { padding: 0; }
+    /* Mini dashboard table inside preview */
+    .preview-table { width: 100%; border-collapse: collapse; }
+    .preview-table thead tr { background: var(--surface-2); }
+    .preview-table th {
+      font-family: var(--mono); font-size: 10px; color: var(--dim);
+      text-transform: uppercase; letter-spacing: 0.07em;
+      padding: 10px 16px; text-align: left; border-bottom: 1px solid var(--border);
+      font-weight: 500;
+    }
+    .preview-table td {
+      font-size: 12px; color: var(--muted); padding: 10px 16px;
+      border-bottom: 1px solid var(--border); font-family: var(--mono);
+    }
+    .preview-table td.company { color: var(--fg); font-family: var(--font); font-size: 12px; }
+    .preview-table tr:hover td { background: rgba(255,255,255,0.02); }
+    .preview-table tr:last-child td { border-bottom: none; }
+
+    /* ── HOW IT WORKS ────────────────────────────────────── */
+    .how-section {
+      padding: 80px 48px;
+      background: var(--surface-1);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .how-inner { max-width: 1120px; margin: 0 auto; }
+    .how-steps {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 40px; margin-top: 48px;
+    }
+    .step-num {
+      font-family: var(--mono); font-size: 10px; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      margin-bottom: 12px; display: block;
+    }
+    .step-title {
+      font-size: 16px; font-weight: 600; color: var(--fg); margin-bottom: 8px;
+    }
+    .step-body { font-size: 13px; color: var(--muted); line-height: 1.75; }
+
+    /* ── CTA ─────────────────────────────────────────────── */
+    .cta-section { padding: 64px 48px 80px; max-width: 1120px; margin: 0 auto; }
+    .cta-card {
+      background: var(--surface-1);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 56px;
+      text-align: center;
+    }
+    .cta-card h2 {
+      font-size: clamp(22px, 3vw, 32px); font-weight: 700;
+      color: var(--fg); letter-spacing: -0.025em; margin-bottom: 12px;
+    }
+    .cta-card p { font-size: 14px; color: var(--muted); max-width: 420px; margin: 0 auto 28px; line-height: 1.7; }
+
+    /* ── FOOTER ──────────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 24px 48px;
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .footer-logo {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: 0.06em;
+      color: var(--dim); text-transform: uppercase;
+    }
+    .footer-links { display: flex; gap: 20px; }
+    .footer-links a {
+      font-size: 12px; color: var(--dim); text-decoration: none;
+      transition: color 150ms;
+    }
+    .footer-links a:hover { color: var(--muted); }
+    .footer-legal { font-size: 11px; color: var(--dim); }
+
+    /* ── FOCUS ───────────────────────────────────────────── */
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--fg); outline-offset: 3px; border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav aria-label="Main navigation">
+  <a href="/" class="nav-logo" aria-label="Varro">
+    <span class="nav-mark" aria-hidden="true">
+      <svg width="26" height="24" viewBox="0 0 36 32" fill="none">
+        <defs><clipPath id="lclipNav"><path d="M1 2 L7 2 L18 27 L29 2 L35 2 L18 32 Z"/></clipPath></defs>
+        <rect x="0" y="0" width="36" height="8" fill="#052e16" clip-path="url(#lclipNav)"/>
+        <rect x="0" y="8" width="36" height="8" fill="#166534" clip-path="url(#lclipNav)"/>
+        <rect x="0" y="16" width="36" height="7" fill="#22c55e" clip-path="url(#lclipNav)"/>
+        <rect x="0" y="23" width="36" height="10" fill="#fafafa" clip-path="url(#lclipNav)"/>
+      </svg>
+    </span>
+    <span class="nav-wordmark">Varro</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#product">Platform</a></li>
+    <li><a href="#how">How it works</a></li>
+    <li><a href="#company">Company</a></li>
+  </ul>
+  <a href="#request" class="nav-cta">Request access</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" aria-labelledby="hero-h1">
+  <div class="hero-badge">
+    <span class="badge-dot" aria-hidden="true"></span>
+    Early access, now open
+  </div>
+
+  <h1 id="hero-h1">The ARO your balance sheet <span style="color:#3f3f46">doesn't see.</span></h1>
+
+  <p class="hero-sub">
+    Independent, market-calibrated decommissioning cost estimates for 4.5M+ wells across 22 jurisdictions. Know if your provision is defensible before the auditor does.
+  </p>
+
+  <div class="hero-ctas">
+    <a href="#request" class="btn-primary">
+      Request early access <i class="ph ph-arrow-right" aria-hidden="true"></i>
+    </a>
+    <a href="#how" class="btn-outline">
+      <i class="ph ph-play" aria-hidden="true"></i> See how it works
+    </a>
+  </div>
+
+  <!-- Signal card -->
+  <div class="signal-card" role="region" aria-label="Example ARO signal, Apache Corporation">
+    <div class="sc-header">
+      <div>
+        <span class="sc-company">Apache Corporation</span>
+        <span class="sc-ticker">APA</span>
+      </div>
+      <span class="badge badge-red">
+        <i class="ph ph-warning" aria-hidden="true"></i>
+        UNDER_RESERVED
+      </span>
+    </div>
+
+    <div class="sc-bars">
+      <div class="sc-bar-row">
+        <div class="sc-bar-meta">
+          <span class="sc-bar-label">EDGAR ARO provision</span>
+          <span class="sc-bar-val">$2.4B</span>
+        </div>
+        <div class="sc-bar-track"><div class="sc-bar-fill edgar"></div></div>
+      </div>
+      <div class="sc-bar-row">
+        <div class="sc-bar-meta">
+          <span class="sc-bar-label">Varro P50 estimate</span>
+          <span class="sc-bar-val data">$9.8B ↑</span>
+        </div>
+        <div class="sc-bar-track"><div class="sc-bar-fill varro"></div></div>
+      </div>
+    </div>
+
+    <div class="sc-footer">
+      <span class="sc-chip">Wells <span>20,653</span></span>
+      <span class="sc-chip">Coverage <span>83%</span></span>
+      <span class="sc-chip">Variance <span style="color:#f87171">+309%</span></span>
+      <span class="sc-chip">Match <span>XBRL · HIGH</span></span>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-bar" role="region" aria-label="Platform statistics">
+  <div class="stats-inner">
+    <div class="stat">
+      <span class="stat-num">4.5M+</span>
+      <span class="stat-label">Wells modelled</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">22</span>
+      <span class="stat-label">Jurisdictions</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">$300B+</span>
+      <span class="stat-label">Estimated liability</span>
+    </div>
+    <div class="stat">
+      <span class="stat-num">27</span>
+      <span class="stat-label">Public companies tracked</span>
+    </div>
+  </div>
+</div>
+
+<!-- METHODOLOGY BAR -->
+<div class="method-bar" aria-label="Data sources">
+  <span class="method-label">Built on</span>
+  <span class="method-label">EDGAR XBRL</span>
+  <span class="method-sep">·</span>
+  <span class="method-label">NSTA</span>
+  <span class="method-sep">·</span>
+  <span class="method-label">BSEE</span>
+  <span class="method-sep">·</span>
+  <span class="method-label">AER</span>
+  <span class="method-sep">·</span>
+  <span class="method-label">Sodir</span>
+  <span class="method-sep">·</span>
+  <span class="method-label">ANP</span>
+  <span class="method-sep">·</span>
+  <span class="method-label">NOPTA</span>
+  <span class="method-sep">·</span>
+  <span class="method-label">RRC</span>
+</div>
+
+<!-- FEATURES -->
+  <section id="product" style="border-top:1px solid #18181b;border-bottom:1px solid #18181b;">
+    <div style="max-width:1120px;margin:0 auto;padding:56px 48px 0;">
+      <span class="section-eyebrow">The platform</span>
+      <h2 style="font-size:clamp(22px,3vw,32px);font-weight:700;letter-spacing:-0.025em;color:#fafafa;max-width:560px;line-height:1.2;margin-bottom:0;">Independent intelligence.<br>For every barrel in the ground.</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #18181b;margin-top:40px;">
+
+      <!-- PANEL 1 -->
+      <div style="border-right:1px solid #18181b;padding:40px 40px 48px;">
+        <span style="font-family:'Geist Mono',monospace;font-size:10px;color:#3f3f46;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:40px;">FIG 0.1</span>
+        <svg width="100%" viewBox="0 0 280 220" fill="none" style="display:block;margin-bottom:40px;">
+          <!-- Stacked geological strata layers -->
+          <polygon points="113,169 213,199 168,217 68,187" fill="#0d0d10" stroke="#1e1e22" stroke-width="1"/>
+          <polygon points="213,199 168,217 168,211 213,193" fill="#0a0a0d" stroke="#1a1a1e" stroke-width="1"/>
+          <polygon points="168,217 68,187 68,181 168,211" fill="#0c0c0f" stroke="#1a1a1e" stroke-width="1"/>
+          <polygon points="113,149 213,179 168,197 68,167" fill="#121215" stroke="#242428" stroke-width="1"/>
+          <polygon points="213,179 168,197 168,191 213,173" fill="#0f0f12" stroke="#202024" stroke-width="1"/>
+          <polygon points="168,197 68,167 68,161 168,191" fill="#111114" stroke="#202024" stroke-width="1"/>
+          <polygon points="113,129 213,159 168,177 68,147" fill="#171720" stroke="#2c2c36" stroke-width="1"/>
+          <polygon points="213,159 168,177 168,171 213,153" fill="#14141c" stroke="#282830" stroke-width="1"/>
+          <polygon points="168,177 68,147 68,141 168,171" fill="#15151e" stroke="#282830" stroke-width="1"/>
+          <polygon points="113,109 213,139 168,157 68,127" fill="#1c1c28" stroke="#34344a" stroke-width="1"/>
+          <polygon points="213,139 168,157 168,151 213,133" fill="#181824" stroke="#2e2e42" stroke-width="1"/>
+          <polygon points="168,157 68,127 68,121 168,151" fill="#1a1a26" stroke="#2e2e42" stroke-width="1"/>
+          <polygon points="113,89 213,119 168,137 68,107" fill="#222236" stroke="#3e3e58" stroke-width="1.5"/>
+          <polygon points="213,119 168,137 168,131 213,113" fill="#1e1e30" stroke="#383850" stroke-width="1.5"/>
+          <polygon points="168,137 68,107 68,101 168,131" fill="#202034" stroke="#383850" stroke-width="1.5"/>
+          <!-- Top slab (highlighted) -->
+          <polygon points="113,63 213,93 168,111 68,81" fill="#252540" stroke="#50507a" stroke-width="1.5"/>
+          <polygon points="213,93 168,111 168,105 213,87" fill="#20203a" stroke="#484870" stroke-width="1.5"/>
+          <polygon points="168,111 68,81 68,75 168,105" fill="#222240" stroke="#484870" stroke-width="1.5"/>
+          <polyline points="113,57 213,87 168,105 68,75 113,57" fill="none" stroke="#6060a0" stroke-width="1.5"/>
+          <line x1="68" y1="75" x2="68" y2="187" stroke="#1c1c28" stroke-width="1" stroke-dasharray="2,5"/>
+          <line x1="213" y1="87" x2="213" y2="199" stroke="#1c1c28" stroke-width="1" stroke-dasharray="2,5"/>
+        </svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fafafa;margin-bottom:8px;letter-spacing:-0.01em;">4.5M wells. 22 jurisdictions.</h3>
+        <p style="font-size:13px;color:#71717a;line-height:1.75;">Every well, every depth class, every region independently modelled. No self-reported assumptions. No spreadsheets.</p>
+      </div>
+
+      <!-- PANEL 2 -->
+      <div style="border-right:1px solid #18181b;padding:40px 40px 48px;">
+        <span style="font-family:'Geist Mono',monospace;font-size:10px;color:#3f3f46;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:40px;">FIG 0.2</span>
+        <svg width="100%" viewBox="0 0 280 220" fill="none" style="display:block;margin-bottom:40px;">
+          <!-- Ground plane -->
+          <polygon points="50,190 140,215 230,190 140,165" fill="#0e0e11" stroke="#1c1c1f" stroke-width="1"/>
+          <!-- P10 bar (short) -->
+          <polygon points="58,190 58,148 93,130 93,172" fill="#111116" stroke="#262630" stroke-width="1"/>
+          <polygon points="93,172 93,130 115,140 115,182" fill="#0e0e13" stroke="#222228" stroke-width="1"/>
+          <polygon points="58,148 93,130 115,140 80,158" fill="#1e1e2c" stroke="#3a3a50" stroke-width="1.5"/>
+          <text x="86" y="208" font-family="'Geist Mono',monospace" font-size="9" fill="#3f3f46" text-anchor="middle" letter-spacing="0.5">P10</text>
+          <!-- P50 bar (medium) -->
+          <polygon points="112,183 112,103 147,85 147,163" fill="#151520" stroke="#2e2e46" stroke-width="1"/>
+          <polygon points="147,163 147,85 169,95 169,173" fill="#121218" stroke="#28283e" stroke-width="1"/>
+          <polygon points="112,103 147,85 169,95 134,113" fill="#242440" stroke="#464668" stroke-width="1.5"/>
+          <text x="140" y="208" font-family="'Geist Mono',monospace" font-size="9" fill="#52526a" text-anchor="middle" letter-spacing="0.5">P50</text>
+          <!-- P90 bar (tall) -->
+          <polygon points="168,175 168,35 203,17 203,157" fill="#1c1c2e" stroke="#3a3a5a" stroke-width="1.5"/>
+          <polygon points="203,157 203,17 225,27 225,167" fill="#181826" stroke="#323248" stroke-width="1.5"/>
+          <polygon points="168,35 203,17 225,27 190,45" fill="#2e2e50" stroke="#606088" stroke-width="2"/>
+          <text x="196" y="208" font-family="'Geist Mono',monospace" font-size="9" fill="#52526a" text-anchor="middle" letter-spacing="0.5">P90</text>
+          <!-- Connecting variance band -->
+          <polyline points="80,158 134,113 190,45" fill="none" stroke="#28283e" stroke-width="1" stroke-dasharray="3,4"/>
+        </svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fafafa;margin-bottom:8px;letter-spacing:-0.01em;">P10. P50. P90. Per asset.</h3>
+        <p style="font-size:13px;color:#71717a;line-height:1.75;">Probabilistic cost ranges for every well, calibrated to regional benchmarks, depth class, and vintage. A defensible range, not a single guess.</p>
+      </div>
+
+      <!-- PANEL 3 -->
+      <div style="padding:40px 40px 48px;">
+        <span style="font-family:'Geist Mono',monospace;font-size:10px;color:#3f3f46;letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:40px;">FIG 0.3</span>
+        <svg width="100%" viewBox="0 0 280 220" fill="none" style="display:block;margin-bottom:40px;">
+          <!-- Connections -->
+          <line x1="140" y1="110" x2="80" y2="58" stroke="#1c1c26" stroke-width="1.5"/>
+          <line x1="140" y1="110" x2="200" y2="58" stroke="#1c1c26" stroke-width="1.5"/>
+          <line x1="140" y1="110" x2="58" y2="128" stroke="#1c1c26" stroke-width="1.5"/>
+          <line x1="140" y1="110" x2="222" y2="128" stroke="#1c1c26" stroke-width="1.5"/>
+          <line x1="140" y1="110" x2="98" y2="172" stroke="#1c1c26" stroke-width="1.5"/>
+          <line x1="140" y1="110" x2="182" y2="172" stroke="#1c1c26" stroke-width="1.5"/>
+          <line x1="80" y1="58" x2="200" y2="58" stroke="#161620" stroke-width="1"/>
+          <line x1="58" y1="128" x2="98" y2="172" stroke="#161620" stroke-width="1"/>
+          <line x1="222" y1="128" x2="182" y2="172" stroke="#161620" stroke-width="1"/>
+          <line x1="80" y1="58" x2="58" y2="128" stroke="#161620" stroke-width="1"/>
+          <line x1="200" y1="58" x2="222" y2="128" stroke="#161620" stroke-width="1"/>
+          <!-- Outer nodes -->
+          <circle cx="80" cy="58" r="9" fill="#111116" stroke="#28283a" stroke-width="1.5"/>
+          <circle cx="200" cy="58" r="9" fill="#111116" stroke="#28283a" stroke-width="1.5"/>
+          <circle cx="58" cy="128" r="9" fill="#111116" stroke="#28283a" stroke-width="1.5"/>
+          <circle cx="222" cy="128" r="9" fill="#111116" stroke="#28283a" stroke-width="1.5"/>
+          <circle cx="98" cy="172" r="9" fill="#111116" stroke="#28283a" stroke-width="1.5"/>
+          <circle cx="182" cy="172" r="9" fill="#111116" stroke="#28283a" stroke-width="1.5"/>
+          <text x="80" y="44" font-family="'Geist Mono',monospace" font-size="8" fill="#3f3f46" text-anchor="middle">APA</text>
+          <text x="200" y="44" font-family="'Geist Mono',monospace" font-size="8" fill="#3f3f46" text-anchor="middle">DVN</text>
+          <text x="40" y="132" font-family="'Geist Mono',monospace" font-size="8" fill="#3f3f46" text-anchor="middle">OXY</text>
+          <text x="240" y="132" font-family="'Geist Mono',monospace" font-size="8" fill="#3f3f46" text-anchor="middle">COP</text>
+          <text x="98" y="192" font-family="'Geist Mono',monospace" font-size="8" fill="#3f3f46" text-anchor="middle">AR</text>
+          <text x="182" y="192" font-family="'Geist Mono',monospace" font-size="8" fill="#3f3f46" text-anchor="middle">EOG</text>
+          <!-- Central node -->
+          <circle cx="140" cy="110" r="30" fill="none" stroke="#18182a" stroke-width="1"/>
+          <circle cx="140" cy="110" r="21" fill="none" stroke="#22223a" stroke-width="1"/>
+          <circle cx="140" cy="110" r="15" fill="#161624" stroke="#3e3e60" stroke-width="1.5"/>
+          <circle cx="140" cy="110" r="7" fill="#20203a" stroke="#585878" stroke-width="1.5"/>
+          <circle cx="140" cy="110" r="2.5" fill="#7878a8"/>
+          <text x="140" y="152" font-family="'Geist Mono',monospace" font-size="9" fill="#52526a" text-anchor="middle" letter-spacing="1">VARRO</text>
+        </svg>
+        <h3 style="font-size:15px;font-weight:600;color:#fafafa;margin-bottom:8px;letter-spacing:-0.01em;">A model that learns. In real time.</h3>
+        <p style="font-size:13px;color:#71717a;line-height:1.75;">Inject your proprietary data. Actual well costs, regulatory changes, campaign effects. Varro recalculates P5 through P95 instantly. Every injection logged.</p>
+      </div>
+
+    </div>
+  </section>
+
+<!-- PRODUCT PREVIEW -->
+<div class="preview-section" aria-label="Product preview">
+  <div class="preview-frame">
+    <div class="preview-topbar">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="preview-topbar-title">ARO Variance Engine, Operator view</span>
+    </div>
+    <div class="preview-body">
+      <table class="preview-table" aria-label="Sample operator variance data">
+        <thead>
+          <tr>
+            <th>Ticker</th>
+            <th>Company</th>
+            <th>Wells</th>
+            <th>EDGAR ARO</th>
+            <th>Varro P50</th>
+            <th>Variance</th>
+            <th>Signal</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>TALO</td><td class="company">Talos Energy</td><td>2,423</td><td>$1,330M</td><td>$19,450M</td>
+            <td style="color:#f87171">+452%</td>
+            <td><span class="badge badge-red">UNDER_RESERVED</span></td>
+          </tr>
+          <tr style="background:rgba(255,255,255,0.025)">
+            <td>APA</td><td class="company">Apache Corporation</td><td>20,653</td><td>$2,400M</td><td>$9,816M</td>
+            <td style="color:#f87171">+309%</td>
+            <td><span class="badge badge-red">UNDER_RESERVED</span></td>
+          </tr>
+          <tr>
+            <td>FANG</td><td class="company">Diamondback Energy</td><td>10,864</td><td>$542M</td><td>$1,232M</td>
+            <td style="color:#f87171">+127%</td>
+            <td><span class="badge badge-red">UNDER_RESERVED</span></td>
+          </tr>
+          <tr>
+            <td>DVN</td><td class="company">Devon Energy</td><td>14,887</td><td>$906M</td><td>$1,459M</td>
+            <td style="color:#f87171">+61%</td>
+            <td><span class="badge badge-red">UNDER_RESERVED</span></td>
+          </tr>
+          <tr>
+            <td>COP</td><td class="company">ConocoPhillips</td><td>15,573</td><td>$8,360M</td><td>$9,010M</td>
+            <td style="color:#a1a1aa">+8%</td>
+            <td><span class="badge badge-green">CORRECT</span></td>
+          </tr>
+          <tr>
+            <td>XOM</td><td class="company">ExxonMobil</td><td>6,826</td><td>$12,520M</td><td>$6,180M</td>
+            <td style="color:#a1a1aa">−51%</td>
+            <td><span class="badge badge-muted">LOW COV.</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div id="how" class="how-section" aria-labelledby="how-heading">
+  <div class="how-inner">
+    <span class="section-eyebrow">How it works</span>
+    <h2 class="section-heading" id="how-heading">From asset list to ARO signal in minutes.</h2>
+    <div class="how-steps">
+      <div class="how-step">
+        <span class="step-num">Step 01</span>
+        <h3 class="step-title">Connect your portfolio</h3>
+        <p class="step-body">Upload your asset list or connect via API. We match against 4.5M wells and index your operator's full portfolio, including assets you may not have mapped.</p>
+      </div>
+      <div class="how-step">
+        <span class="step-num">Step 02</span>
+        <h3 class="step-title">Get your estimate</h3>
+        <p class="step-body">Varro returns P10/P50/P90 cost estimates for every asset, calibrated to regional benchmarks, depth class, vintage, and well type.</p>
+      </div>
+      <div class="how-step">
+        <span class="step-num">Step 03</span>
+        <h3 class="step-title">See the variance</h3>
+        <p class="step-body">Compare your provision against market rates, PV-adjusted to your discount rate. Know where you stand before the auditor, regulator, or acquirer asks.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CTA -->
+<div id="request" class="cta-section">
+  <div class="cta-card">
+    <h2>Ready to see your numbers?</h2>
+    <p>We're working with a small group of design partners. Request access and we'll show you your portfolio estimate on your first call.</p>
+    <a href="mailto:seyi@varro.ai" class="btn-primary" style="font-size:15px;padding:12px 28px">
+      Request early access <i class="ph ph-arrow-right" aria-hidden="true"></i>
+    </a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">
+    <svg width="36" height="26" viewBox="0 0 36 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Back V: gray, left position -->
+  <path d="M2 3L11 21L20 3" stroke="#9ca3af" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Front V: white, right position, overlaps back V -->
+  <path d="M10 3L19 21L28 3" stroke="#fafafa" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+    Varro
+  </div>
+  <nav class="footer-links" aria-label="Footer">
+    <a href="#">Platform</a>
+    <a href="#">Data</a>
+    <a href="#">Privacy</a>
+    <a href="#">Terms</a>
+  </nav>
+  <p class="footer-legal">© 2026 Varro. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

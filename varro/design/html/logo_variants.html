@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VARRO — Logo Variants</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #09090b;
+      font-family: 'Geist', sans-serif;
+      color: #fafafa;
+      padding: 60px 48px;
+      min-height: 100vh;
+    }
+    h1 { font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: #52525b; margin-bottom: 56px; font-weight: 500; }
+
+    .variants { display: flex; flex-direction: column; gap: 72px; }
+
+    .variant { display: flex; flex-direction: column; gap: 32px; }
+    .variant-label {
+      font-size: 10px; text-transform: uppercase; letter-spacing: 0.12em;
+      color: #52525b; font-weight: 500;
+      border-left: 2px solid #27272a; padding-left: 10px;
+    }
+    .variant-label span { color: #a1a1aa; }
+
+    .lockups {
+      display: flex; align-items: center; gap: 64px; flex-wrap: wrap;
+    }
+
+    .lockup {
+      display: flex; flex-direction: column; gap: 16px; align-items: center;
+    }
+    .lockup-label { font-size: 10px; color: #52525b; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    /* ── WORDMARK shared ─────────────────────── */
+    .wm {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .wm-text {
+      font-family: 'Geist', sans-serif;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: #fafafa;
+    }
+    .wm-text.lg { font-size: 22px; }
+    .wm-text.md { font-size: 16px; }
+    .wm-text.sm { font-size: 11px; }
+
+    /* dark card preview */
+    .on-dark { background: #09090b; padding: 20px 24px; border-radius: 8px; border: 1px solid #1c1c1f; }
+    .on-light { background: #f4f4f5; padding: 20px 24px; border-radius: 8px; }
+    .on-light .wm-text { color: #09090b; }
+
+    /* mark-only display */
+    .mark-only { background: #09090b; padding: 24px; border-radius: 8px; border: 1px solid #1c1c1f; }
+
+    .divider { width: 1px; height: 80px; background: #1c1c1f; }
+  </style>
+</head>
+<body>
+
+<h1>VARRO — Logo Mark Variants · Apr 2026</h1>
+
+<div class="variants">
+
+  <!-- ═══════════════════════════════════════════════════════
+       VARIANT A — REFINED STROKE
+       Fix: back V thinner + lighter, precise apex offset,
+       clearer crossing. Still a stroked approach.
+  ══════════════════════════════════════════════════════════ -->
+  <div class="variant">
+    <div class="variant-label">A — Refined stroke <span>· Back V thinner + lighter, intentional apex offset, clear crossing</span></div>
+    <div class="lockups">
+
+      <!-- Large lockup -->
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="42" height="34" viewBox="0 0 42 34" fill="none">
+              <!-- Back V: lighter gray, thinner, offset left+up, apex at (14,31) -->
+              <path d="M4 4L14 31L24 4" stroke="#71717a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Front V: white, heavier, offset right+down, apex at (21,31) -->
+              <path d="M11 4L21 31L31 4" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+              <!-- Top cap line connecting both -->
+            </svg>
+            <span class="wm-text lg">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Large · dark bg</span>
+      </div>
+
+      <!-- Medium lockup -->
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="28" height="22" viewBox="0 0 42 34" fill="none">
+              <path d="M4 4L14 31L24 4" stroke="#71717a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11 4L21 31L31 4" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="wm-text md">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Medium · dark bg</span>
+      </div>
+
+      <!-- Small -->
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="18" height="14" viewBox="0 0 42 34" fill="none">
+              <path d="M4 4L14 31L24 4" stroke="#71717a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11 4L21 31L31 4" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="wm-text sm">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Small · dark bg</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <!-- Light bg -->
+      <div class="lockup">
+        <div class="on-light">
+          <div class="wm">
+            <svg width="42" height="34" viewBox="0 0 42 34" fill="none">
+              <path d="M4 4L14 31L24 4" stroke="#a1a1aa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M11 4L21 31L31 4" stroke="#18181b" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="wm-text lg">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Large · light bg</span>
+      </div>
+
+      <!-- Mark only -->
+      <div class="lockup">
+        <div class="mark-only">
+          <svg width="48" height="40" viewBox="0 0 42 34" fill="none">
+            <path d="M4 4L14 31L24 4" stroke="#71717a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 4L21 31L31 4" stroke="#fafafa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="lockup-label">Mark only</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       VARIANT B — FILLED POLYGONS
+       Two solid V shapes as filled polygons. More bold,
+       reads clearly at all sizes. Back V: dark gray.
+       Front V: white. Hard edge overlap = crisp.
+  ══════════════════════════════════════════════════════════ -->
+  <div class="variant">
+    <div class="variant-label">B — Filled polygons <span>· Bold, crisp at all sizes, hard-edge overlap</span></div>
+    <div class="lockups">
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="42" height="34" viewBox="0 0 44 36" fill="none">
+              <!-- Back V polygon: gray, left position -->
+              <polygon points="6,4 14,4 22,30 18,30" fill="#71717a"/>
+              <polygon points="6,4 10,4 18,30 14,30" fill="#52525b"/>
+              <!-- This draws left arm -->
+              <!-- Let me redo as proper V polygons -->
+            </svg>
+            <!-- Redo with cleaner polygon V -->
+            <svg width="42" height="34" viewBox="0 0 44 34" fill="none" style="margin-left:-42px">
+              <!-- Back V: gray filled, apex at (16,31), arms top-left at (2,4) and top-right at (26,4), arm width 5 -->
+              <path d="M2 4 L7 4 L16 28 L25 4 L30 4 L16 34 Z" fill="#5a5a68" opacity="0.9"/>
+              <!-- Front V: white filled, apex at (22,31), arms at (8,4) and (36,4), arm width 5 -->
+              <path d="M8 4 L13 4 L22 28 L31 4 L36 4 L22 34 Z" fill="#fafafa"/>
+            </svg>
+            <span class="wm-text lg">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Large · dark bg</span>
+      </div>
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="28" height="22" viewBox="0 0 44 34" fill="none">
+              <path d="M2 4 L7 4 L16 28 L25 4 L30 4 L16 34 Z" fill="#5a5a68" opacity="0.9"/>
+              <path d="M8 4 L13 4 L22 28 L31 4 L36 4 L22 34 Z" fill="#fafafa"/>
+            </svg>
+            <span class="wm-text md">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Medium</span>
+      </div>
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="18" height="14" viewBox="0 0 44 34" fill="none">
+              <path d="M2 4 L7 4 L16 28 L25 4 L30 4 L16 34 Z" fill="#5a5a68" opacity="0.9"/>
+              <path d="M8 4 L13 4 L22 28 L31 4 L36 4 L22 34 Z" fill="#fafafa"/>
+            </svg>
+            <span class="wm-text sm">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Small</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="lockup">
+        <div class="on-light">
+          <div class="wm">
+            <svg width="42" height="34" viewBox="0 0 44 34" fill="none">
+              <path d="M2 4 L7 4 L16 28 L25 4 L30 4 L16 34 Z" fill="#d4d4d8"/>
+              <path d="M8 4 L13 4 L22 28 L31 4 L36 4 L22 34 Z" fill="#18181b"/>
+            </svg>
+            <span class="wm-text lg">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Light bg</span>
+      </div>
+
+      <div class="lockup">
+        <div class="mark-only">
+          <svg width="52" height="42" viewBox="0 0 44 34" fill="none">
+            <path d="M2 4 L7 4 L16 28 L25 4 L30 4 L16 34 Z" fill="#5a5a68" opacity="0.9"/>
+            <path d="M8 4 L13 4 L22 28 L31 4 L36 4 L22 34 Z" fill="#fafafa"/>
+          </svg>
+        </div>
+        <span class="lockup-label">Mark only</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       VARIANT C — STRATA LAYERS
+       Three horizontal tonal bands form a V.
+       References geological strata — directly relevant to O&G.
+       Reads as a single V but with depth through layering.
+  ══════════════════════════════════════════════════════════ -->
+  <div class="variant">
+    <div class="variant-label">C — Strata layers <span>· Three tonal bands, geological reference, single clean V</span></div>
+    <div class="lockups">
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <!-- V shape with 3 horizontal tonal bands via clipPath -->
+            <svg width="36" height="32" viewBox="0 0 36 32" fill="none">
+              <defs>
+                <!-- V shape as clip path -->
+                <clipPath id="vclip">
+                  <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z"/>
+                </clipPath>
+              </defs>
+              <!-- Base V shape outline for reference -->
+              <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z" fill="#27272a"/>
+              <!-- Tonal bands clipped to V shape -->
+              <rect x="0" y="2" width="36" height="9" fill="#a1a1aa" clip-path="url(#vclip)"/>
+              <rect x="0" y="11" width="36" height="10" fill="#d4d4d8" clip-path="url(#vclip)"/>
+              <rect x="0" y="21" width="36" height="12" fill="#fafafa" clip-path="url(#vclip)"/>
+            </svg>
+            <span class="wm-text lg">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Large · dark bg</span>
+      </div>
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="24" height="22" viewBox="0 0 36 32" fill="none">
+              <defs>
+                <clipPath id="vclip2">
+                  <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z"/>
+                </clipPath>
+              </defs>
+              <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z" fill="#27272a"/>
+              <rect x="0" y="2" width="36" height="9" fill="#a1a1aa" clip-path="url(#vclip2)"/>
+              <rect x="0" y="11" width="36" height="10" fill="#d4d4d8" clip-path="url(#vclip2)"/>
+              <rect x="0" y="21" width="36" height="12" fill="#fafafa" clip-path="url(#vclip2)"/>
+            </svg>
+            <span class="wm-text md">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Medium</span>
+      </div>
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="16" height="14" viewBox="0 0 36 32" fill="none">
+              <defs>
+                <clipPath id="vclip3">
+                  <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z"/>
+                </clipPath>
+              </defs>
+              <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z" fill="#27272a"/>
+              <rect x="0" y="2" width="36" height="9" fill="#a1a1aa" clip-path="url(#vclip3)"/>
+              <rect x="0" y="11" width="36" height="10" fill="#d4d4d8" clip-path="url(#vclip3)"/>
+              <rect x="0" y="21" width="36" height="12" fill="#fafafa" clip-path="url(#vclip3)"/>
+            </svg>
+            <span class="wm-text sm">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Small</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="lockup">
+        <div class="on-light">
+          <div class="wm">
+            <svg width="36" height="32" viewBox="0 0 36 32" fill="none">
+              <defs>
+                <clipPath id="vclip4">
+                  <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z"/>
+                </clipPath>
+              </defs>
+              <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z" fill="#e4e4e7"/>
+              <rect x="0" y="2" width="36" height="9" fill="#71717a" clip-path="url(#vclip4)"/>
+              <rect x="0" y="11" width="36" height="10" fill="#3f3f46" clip-path="url(#vclip4)"/>
+              <rect x="0" y="21" width="36" height="12" fill="#18181b" clip-path="url(#vclip4)"/>
+            </svg>
+            <span class="wm-text lg">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Light bg</span>
+      </div>
+
+      <div class="lockup">
+        <div class="mark-only">
+          <svg width="48" height="42" viewBox="0 0 36 32" fill="none">
+            <defs>
+              <clipPath id="vclip5">
+                <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z"/>
+              </clipPath>
+            </defs>
+            <path d="M1 2 L7 2 L18 26 L29 2 L35 2 L18 31 Z" fill="#27272a"/>
+            <rect x="0" y="2" width="36" height="9" fill="#a1a1aa" clip-path="url(#vclip5)"/>
+            <rect x="0" y="11" width="36" height="10" fill="#d4d4d8" clip-path="url(#vclip5)"/>
+            <rect x="0" y="21" width="36" height="12" fill="#fafafa" clip-path="url(#vclip5)"/>
+          </svg>
+        </div>
+        <span class="lockup-label">Mark only</span>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════
+       VARIANT D — SINGLE V, SPLIT TONE
+       One V, left arm slightly dimmer, right arm bright white.
+       Clean. Unambiguous. Works at 12px favicon size.
+  ══════════════════════════════════════════════════════════ -->
+  <div class="variant">
+    <div class="variant-label">D — Single V, split tone <span>· Unambiguous, cleaner, works at favicon size</span></div>
+    <div class="lockups">
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="none">
+              <!-- Left arm: dimmer -->
+              <path d="M2 3L16 26" stroke="#71717a" stroke-width="3.5" stroke-linecap="round"/>
+              <!-- Right arm: bright white -->
+              <path d="M16 26L30 3" stroke="#fafafa" stroke-width="3.5" stroke-linecap="round"/>
+              <!-- Subtle top connector -->
+              <path d="M2 3L30 3" stroke="#3f3f46" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="wm-text lg">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Large · dark bg</span>
+      </div>
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="22" height="19" viewBox="0 0 32 28" fill="none">
+              <path d="M2 3L16 26" stroke="#71717a" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M16 26L30 3" stroke="#fafafa" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M2 3L30 3" stroke="#3f3f46" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="wm-text md">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Medium</span>
+      </div>
+
+      <div class="lockup">
+        <div class="on-dark">
+          <div class="wm">
+            <svg width="15" height="13" viewBox="0 0 32 28" fill="none">
+              <path d="M2 3L16 26" stroke="#71717a" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M16 26L30 3" stroke="#fafafa" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+            <span class="wm-text sm">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Small</span>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="lockup">
+        <div class="on-light">
+          <div class="wm">
+            <svg width="32" height="28" viewBox="0 0 32 28" fill="none">
+              <path d="M2 3L16 26" stroke="#a1a1aa" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M16 26L30 3" stroke="#18181b" stroke-width="3.5" stroke-linecap="round"/>
+              <path d="M2 3L30 3" stroke="#d4d4d8" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span class="wm-text lg">Varro</span>
+          </div>
+        </div>
+        <span class="lockup-label">Light bg</span>
+      </div>
+
+      <div class="lockup">
+        <div class="mark-only">
+          <svg width="40" height="36" viewBox="0 0 32 28" fill="none">
+            <path d="M2 3L16 26" stroke="#71717a" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M16 26L30 3" stroke="#fafafa" stroke-width="3.5" stroke-linecap="round"/>
+            <path d="M2 3L30 3" stroke="#3f3f46" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <span class="lockup-label">Mark only</span>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div style="margin-top: 72px; padding-top: 32px; border-top: 1px solid #1c1c1f;">
+  <p style="font-size: 10px; color: #3f3f46; letter-spacing: 0.06em; text-transform: uppercase;">
+    A = Refined stroke (current direction, fixed weight diff) ·
+    B = Filled polygon (bold, crisp) ·
+    C = Strata layers (geological reference) ·
+    D = Single split-tone V (simplest, most legible)
+  </p>
+</div>
+
+</body>
+</html>
